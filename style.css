@@ -1,0 +1,300 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    border: 3px solid red;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    min-height: 4rem;
+    background-color: black;
+    /* display: flex; */
+    border: 3px solid red;
+    z-index: 1;
+}
+
+nav {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 3px solid green;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+header {
+    counter-reset: container-numbring;
+} 
+
+.container h1 {
+    height: 70%;
+    text-transform: uppercase;
+}
+
+.container h1::before {
+    display: block;
+    counter-increment: container-numbring;
+    content: counter(container-numbring) "";
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: red;
+    border: 2px solid #000;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    position: relative;
+    right: 3.5rem;
+    top: 2.5rem;
+    box-sizing: border-box;
+}
+
+/* home */
+
+.home {
+    counter-reset: home-numbring;
+}
+
+ol {
+    list-style: none;
+}
+
+ol li::before {
+    counter-increment: home-numbring;
+    content: counter(home-numbring);
+    position: relative;
+    display: block;
+    right: 2.4rem;
+    top: 1.3rem;
+    width: 1.5rem;
+    height: 1.5em;
+    display: grid;
+    place-items: center;
+    border: 2px solid red;
+    border-radius: 20%;
+}
+
+/* end__home */
+
+h1
+ {
+    margin-top: 5rem;
+}
+
+.emoji {
+    background: rgb(255, 174, 0);
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 10rem;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: rgb(0, 0, 0) 0px 0px 40px 2px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.emoji .eyes {
+    /* border: 1px solid red; */
+    margin-top: 4rem;
+    width: 63%;
+    margin-inline: 3rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all .6s ease-in-out;
+}
+
+.left,
+.right {
+    width: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    /* border: 1px solid red; */
+    box-shadow: rgb(176, 165, 11) 0px 0px 4px 1px;
+    transition: all .6s ease-in-out;
+}
+
+.left::before,
+.right::before
+ {
+    content: '';
+    display: block;
+    background: #000;
+    width: 1.4rem;
+    height: 1rem;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: translate(160%, 160%);
+    border-radius: 50%;
+    transition: all .6s ease-in-out;
+}
+
+.left::after,
+.right::after
+ {
+    content: '';
+    display: block;
+    background: #000;
+    width: 2.8rem;
+    height: 2px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: translate(60%, 140%);
+    border-radius: 50%;
+    transition: all .6s ease-in-out;
+}
+
+.wow .emoji .sharam__left,
+.wow .emoji .sharam__right {
+    transition: all .6s ease-in-out;
+}
+
+.lip {
+    width: 10rem;
+    height: 3rem;
+    background: #000;
+    margin-top: 4rem;
+    margin-left: 1.8rem;
+    clip-path: ellipse(26% 8% at 56% 45%);
+    transition: all .6s ease-in-out;
+}
+
+
+/* smile */
+
+.smile .emoji:hover {
+    background: rgb(246, 255, 0);
+}
+
+.smile .emoji:hover .eyes > * {
+    width:  3.56rem;
+}
+
+.smile .emoji:hover .eyes > *::before  {
+    transform: translate(250%, 160%);
+    /* clip-path: circle(21.9% at 51% 25%); */
+}
+
+.smile .emoji:hover .eyes > *::after {
+    /* left: .4rem; */
+}
+
+.smile .emoji:hover .lip 
+ {
+    margin-right: .8rem;
+    clip-path: circle(21.9% at 57% 0%);
+}
+
+/* end|__smile */
+
+/* angry */
+
+.angry .emoji:hover {
+    background: red ;
+}
+
+.angry .emoji:hover .eyes > * {
+    width:  3.56rem;
+}
+
+.angry .emoji:hover .eyes > *::before  {
+    transform: translate(240%, 160%);
+}
+
+.angry .emoji:hover .eyes > *::after {
+    left: .4rem;
+    transform: rotate(-10deg);
+}
+
+
+.angry .emoji:hover .lip 
+ {
+    clip-path: ellipse(16% 8% at 56% 25%);
+}
+
+/* end__angry */
+
+/* wow */
+
+.wow .emoji:hover .eyes > * {
+    /* width:  3.56rem; */
+    height: 3rem;
+}
+
+.wow .emoji:hover .eyes > *::before  {
+    transform: translate(150%, 260%);
+    /* clip-path: circle(21.9% at 51% 25%); */
+}
+
+.wow .emoji .sharam {
+    transition: all .6s ease-in-out;
+    background: red;
+}
+
+.wow .emoji .eyes {
+    transition: all .6s ease-in-out;
+}
+
+.wow .emoji .eyes > *::before
+ {
+    transition: all .6s ease-in-out ;
+}
+
+.wow .emoji:hover .eyes > *::before
+ {
+    height: 1rem;
+}
+
+.wow .emoji:hover .sharam {
+    margin-top: 1.3rem;
+    transition: all .1s ease-in-out;
+}
+
+.wow .emoji:hover .sharam__left,
+.wow .emoji:hover .sharam__right
+ {
+    width: 1rem;
+    height: 1rem;
+    background: rgba(214, 101, 139, 0.751);
+    border-radius: 50%;
+    position: absolute;
+    left: 3rem;
+    box-shadow: rgba(214, 101, 139, 0.536) 0px 0px 123px 80px;
+    transform: scale(1,1);
+}
+
+.wow .emoji:hover .sharam__right { 
+    left: 11rem;
+}
+
+.wow .emoji:hover .lip 
+ {
+    clip-path: ellipse(20% 32% at 56% 25%);
+}
+
+/* end__wow */
